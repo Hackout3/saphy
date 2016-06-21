@@ -9,7 +9,10 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
 Imports:
-    ape,adephylo,phangorn,treeImbalance
+    ape,adephylo,phangorn,treeImbalance,phydynR
 Remotes:
-    bdearlove/treeImbalance
+    bdearlove/treeImbalance,emvolz-phylodynamics/phydynR
 BugReports: https://github.com/Hackout3/saphy/issues
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

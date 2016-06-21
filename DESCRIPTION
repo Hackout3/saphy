@@ -1,5 +1,5 @@
 Package: saphy
-Title: What the Package Does (one line, title case)
+Title: Sequential Analysis of Phylogenies
 Version: 0.1.0
 Authors@R: c(person("Simon", "Frost", email = "sdwfrost@gmail.com", role = c("aut", "cre")))
 Description: Sequential analysis of phylogenies.
@@ -13,3 +13,6 @@ Imports:
 Remotes:
     bdearlove/treeImbalance,emvolz-phylodynamics/phydynR
 BugReports: https://github.com/Hackout3/saphy/issues
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
