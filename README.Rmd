@@ -20,3 +20,4 @@ Note that this requires the package *devtools* installed.
 - OJ Watson (@OJWatson)
 
 Maintainer (temporary): Simon Frost (sdwfrost@gmail.com)
+Contributor (temporary): OJ Watson (o.watson15@imperial.ac.uk)
