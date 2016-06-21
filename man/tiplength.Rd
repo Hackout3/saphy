@@ -11,6 +11,9 @@ tiplength(tree, tipname)
 
 \item{tipname}{the tip name, as a character string, or a numeric index}
 }
+\value{
+The tip length (as a \code{double}).
+}
 \description{
 \code{tiplength} returns the length of a tip of a tree, given either (a) the tip name or
 (b) the index of the tip (in the order of the tip labels in the tree).
