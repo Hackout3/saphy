@@ -5,7 +5,7 @@
 #' 
 #' @param tree a phylogenetic tree (as a \code{phylo} object)
 #' @param tipname the tip name, as a character string, or a numeric index
-#' 
+#' @return The tip length (as a \code{double}).
 #' @author Simon Frost (\email{sdwfrost@@gmail.com})
 #' @export
 tiplength <- function(tree,tipname){
