@@ -14,9 +14,15 @@ timeprune(tr, tipdates = NULL, reverse = FALSE)
 \item{reverse}{a boolean (default: \code{FALSE}) determining whether the list of trees should be returned
 in reverse time}
 }
+\value{
+A list with tipdates and trees.
+}
 \description{
 \code{timeprune} prunes a tree by removing tips one at a time, in reverse time order.
 If the time is omitted and the tree is rooted, then the root-to-tip distance is used as
 a proxy of sampling time.
+}
+\author{
+Simon Frost (\email{sdwfrost@gmail.com})
 }
 
