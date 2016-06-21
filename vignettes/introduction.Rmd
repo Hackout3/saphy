@@ -1,0 +1,53 @@
+---
+title: "Introduction to saphy"
+author: "The Hackout3 Team"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+A time-stamped phylogeny of Zika virus is included in the package directory.
+
+```{r,echo=FALSE}
+suppressPackageStartupMessages(library(ape))
+suppressPackageStartupMessages(library(saphy))
+suppressPackageStartupMessages(library(adephylo))
+```
+
+```{r}
+tr <- read.tree(file=paste(path.package("saphy"),"/trees/Zika_newick.tre",sep=""))
+```
+
+```{r}
+plot(tr)
+```
+
+
+As this is a rooted, time-stamped phylogeny, we can get (relative) sampling times by calculating the distance of each tip to the root, using the ```distRoot``` function from the ```adephylo``` package. This is done automatically, when we prune the tree time-wise using the ```timeprune``` function, without specifying sampling times.
+
+```{r}
+tr.pruned <- timeprune(tr)
+```
+
+This returns a list with two elements; ```tipdates```, a named vector of tip dates/times, and ```trees```, a list of ```phylo``` objects (named by the newest tip).
+
+```{r}
+names(tr.pruned)
+```
+
+The tip length associated with each new sequence can be calculated using the ```tiplength``` function.
+
+```{r}
+tl <- mapply(tiplength,tr.pruned$trees,names(tr.pruned$trees))
+```
+
+We can now plot the tip lengths over sampling time; we drop the sampling time of the first sequence.
+
+```{r}
+plot(tl~tr.pruned$tipdates[-1],type="h",xlab="Distance to root",ylab="Tip length")
+```
+
+
