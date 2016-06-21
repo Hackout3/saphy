@@ -11,7 +11,7 @@ This package contains methods for the sequential (real-time, online) analysis of
 To install the devel version of the package, type:
 
 ```r
-devtools::install_github("Hackout3/saphy")
+devtools::install_github("Hackout3/saphy",build_vignettes=TRUE)
 ```
 
 Note that this requires the package *devtools* installed.
@@ -21,4 +21,3 @@ Note that this requires the package *devtools* installed.
 - OJ Watson (@OJWatson)
 
 Maintainer (temporary): Simon Frost (sdwfrost@gmail.com)
-
