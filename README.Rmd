@@ -4,7 +4,9 @@
 
 This package contains methods for the sequential (real-time, online) analysis of phylogenies and sequence data.
 
+\begin{center}
 ![Schema v1.0] (inst/scheme.png)
+\end{center}
 
 # Installing the package
 
