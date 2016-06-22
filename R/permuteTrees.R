@@ -5,7 +5,11 @@
 #'
 #' @param tree a phylogenetic tree (as a \code{phylo} object)
 #' @param reps the number of permuted trees
+#'
 #' @author OJ Watson (\email{o.watson15@@imperial.ac.uk})
+#'
+#' @return A list of permuted trees
+#'
 #' @export
 
 permuteTrees <- function(tree, reps = 100) {

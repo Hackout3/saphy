@@ -3,7 +3,11 @@
 #' \code{imbalanceMetrics} returns a list 1
 #'
 #' @param tree a phylogenetic tree (as a \code{phylo} object)
+#'
 #' @author OJ Watson (\email{o.watson15@@imperial.ac.uk})
+#'
+#' @return A list of 14 imbalance metrics. TO DO. Improve local branching index utility
+#'
 #' @export
 
 imbalanceMetrics <- function(tree) {
@@ -27,7 +31,7 @@ imbalanceMetrics <- function(tree) {
     ls$M <- treeImbalance::M(tree)
     ls$B1 <- treeImbalance::B1(tree)
     ls$B2 <- treeImbalance::B2(tree)
-    ls$lbi.tips <- treeImbalance::lbi(tree)[1:n]
+    ls$lbi.tips <- treeImbalance::lbi(tree)[1:ntips]
     ls$lbi.nodes <- treeImbalance::lbi(tree)[(n+1):ntot]
 
     return(ls)
