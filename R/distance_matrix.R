@@ -15,7 +15,7 @@
 #'
 #' @export
 compute.distance.matrix <- function(aln, model = "TN93", gamma = FALSE){
-  m <- dist.dna(a,model=model,gamma=gamma,pairwise.deletion = TRUE,base.freq=NULL,as.matrix=TRUE)
+  m <- dist.dna(aln,model=model,gamma=gamma,pairwise.deletion = TRUE,base.freq=NULL,as.matrix=TRUE)
   return(m)
 }
 
@@ -34,8 +34,8 @@ compute.distance.matrix <- function(aln, model = "TN93", gamma = FALSE){
 #'
 #' @export
 pairwise.distance <- function(s1, s2, model = "TN93", gamma = FALSE){
-  a <- rbind(s1,s2)
-  d <- dist.dna(a,model=model,gamma=gamma,pairwise.deletion=TRUE,base.freq=NULL)
+  aln <- rbind(s1,s2)
+  d <- dist.dna(aln,model=model,gamma=gamma,pairwise.deletion=TRUE,base.freq=NULL)
   return(as.double(d))
 }
 
@@ -63,7 +63,7 @@ expand.distance.matrix <- function(aln, s, distmat = NULL, model = "TN93", gamma
   naln <- dim(aln)[1]
   rw <- rep(0.0,naln+1)
   for(i in 1:naln){
-    rw[i] <- pairwise.distance(aln[i,],s,model=model,gamma=gamma,pairwise.deletion=pairwise.deletion,base.freq=base.freq)
+    rw[i] <- pairwise.distance(aln[i,],s,model=model,gamma=gamma)
   }
   distmat <- rbind(distmat,rw[1:naln])
   distmat <- cbind(distmat,rw)
