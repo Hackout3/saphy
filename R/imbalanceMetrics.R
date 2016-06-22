@@ -1,6 +1,6 @@
 #' Produces a dataframe of tree imbalance statistics
 #'
-#' \code{imbalanceMetrics} returns a list 1
+#' \code{imbalanceMetrics} returns a list of imabalance statistics
 #'
 #' @param tree a phylogenetic tree (as a \code{phylo} object)
 #'

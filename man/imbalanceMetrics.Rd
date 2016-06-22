@@ -13,7 +13,7 @@ imbalanceMetrics(tree)
 A list of 14 imbalance metrics. TO DO. Improve local branching index utility
 }
 \description{
-\code{imbalanceMetrics} returns a list 1
+\code{imbalanceMetrics} returns a list of imabalance statistics
 }
 \author{
 OJ Watson (\email{o.watson15@imperial.ac.uk})
