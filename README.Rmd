@@ -10,7 +10,7 @@ This package contains methods for the sequential (real-time, online) analysis of
 
 # Installing the package
 
-To install the devel version of the package, type:
+To install the devel version of the package, including vignettes, type:
 ```{r install, eval=FALSE}
 devtools::install_github("Hackout3/saphy",build_vignettes=TRUE)
 ```
