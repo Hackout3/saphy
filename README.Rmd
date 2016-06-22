@@ -17,6 +17,8 @@ Note that this requires the package *devtools* installed.
 
 ### Contributors (by alphabetic order):
 - Simon Frost (@sdwfrost)
+- Don Klinkenberg (@donkeyshot)
+- Yu Luo (@yumcgill)
 - OJ Watson (@OJWatson)
 
 Maintainer (temporary): Simon Frost (sdwfrost@gmail.com)
