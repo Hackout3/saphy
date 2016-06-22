@@ -14,5 +14,7 @@ Remotes:
     bdearlove/treeImbalance,emvolz-phylodynamics/phydynR
 BugReports: https://github.com/Hackout3/saphy/issues
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat,
+    covr
 VignetteBuilder: knitr
