@@ -29,6 +29,7 @@ prunePermute <- function(tree,permutes=10) {
     same.prunes[[i]] <- lapply(prunes, `[[`, i)
   }
 
-  return(same.prunes)
+  return(list("seqPrunes" = same.prunes,
+              "seqTipNames" = nms))
 
 }
