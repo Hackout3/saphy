@@ -17,10 +17,7 @@ prunePermute <- function(tree,permutes=10) {
   p.tree <- permuteTrees(tree,permutes)
   n.tips <- tree$Nnode + 1
 
-  lapply(p.tree,timeprune)
-
-  prunes <- lapply(lapply(p.tree,timeprune),with,trees)
-
+  prunes <- lapply(mclapply(p.tree,timeprune),with,trees)
 
   same.prunes <- list()
   length(same.prunes) <- n.tips-1
