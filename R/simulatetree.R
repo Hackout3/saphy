@@ -1,6 +1,6 @@
 #' Simulate tree and sequences in two-population SIR-model
 #'
-#' \code{simulatetree2} does a deterministic simulation of a two-population SIR-model,
+#' \code{simulatetree} does a deterministic simulation of a two-population SIR-model,
 #' takes samples and simulates a phylogenetic tree. For all this, it makes use of phydynR
 #' (https://github.com/emvolz-phylodynamics/phydynR). Then it simulates DNA-sequences for these samples,
 #' with simSeq (\pkg{phangorn}).
@@ -32,7 +32,7 @@
 #' @author Don Klinkenberg (\email{don@@xs4all.nl})
 #'
 #' @export
-simulatetree2 <- function(N = c(100, 10000),
+simulatetree <- function(N = c(100, 10000),
                           beta = array(c(1.5,0,0,2, 1.5,0,0.1,2), dim = c(2,2,2)), gamma = 1, mu = .05,
                           I0 = c(1, 1),
                           t1 = c(50, 100), res = 1000,

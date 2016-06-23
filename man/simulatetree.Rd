@@ -4,24 +4,29 @@
 \alias{simulatetree}
 \title{Simulate tree and sequences in two-population SIR-model}
 \usage{
-simulatetree(N = c(100, 10000), params = list(beta = matrix(c(2, 0, 0, 2),
-  nrow = 2), gamma = 1, mu = 0.05), I0 = c(1, 1), t1 = 100, res = 1000,
-  sampletimes = c("incidence", "regular"), samplesize = 200,
-  sampleperiod = c(0, t1), sampledist = c("incidence", "popsize", "fixed"),
-  samplebias = 1, ...)
+simulatetree(N = c(100, 10000), beta = array(c(1.5, 0, 0, 2, 1.5, 0, 0.1,
+  2), dim = c(2, 2, 2)), gamma = 1, mu = 0.05, I0 = c(1, 1), t1 = c(50,
+  100), res = 1000, sampletimes = c("incidence", "regular"),
+  samplesize = 200, sampleperiod = c(0, tail(t1, 1)),
+  sampledist = c("incidence", "popsize", "fixed"), samplebias = 1, ...)
 }
 \arguments{
 \item{N}{the population sizes of the two populations}
 
-\item{params}{the parameters for the SIR-model: a named list with transmission rate matrix \code{beta},
-recovery rate \code{gamma} and death rate \code{mu}. Births balance deaths. Transmission is modelled with frequency-dependent
-transmission terms (division by N).}
+\item{beta}{an array of 2x2 transmission rate matrices. The third dimension is the number of matrices, which is the
+number of time intervals with different transmission rates. Transmission is modelled with frequency-dependent transmission
+terms (division by N).}
+
+\item{gamma}{the recovery rate}
+
+\item{mu}{the death rate. Births balance deaths.}
 
 \item{I0}{initial numbers of infecteds. The rest is assumed susceptible.}
 
-\item{t1}{duration of the simulation}
+\item{t1}{a vector with times at which the transmission rates change to the next matrix in \code{beta}.
+The last time is the duration of the simulation}
 
-\item{res}{resolution of the epidemic simulation (ODE solver)}
+\item{res}{resolution of the epidemic simulation per transmission rate interval (ODE solver)}
 
 \item{sampletimes}{indicates if sampling occurs at random times proportional to incidence (default \code{"incidence"}) or
 at random uniform times (\code{"regular"})}
@@ -40,12 +45,14 @@ relative to the second. If equal to 1, the weight is completely determined by \c
 \item{...}{arguments to be passed to simSeq (\pkg{phangorn})}
 }
 \value{
-A list with a tree (classes \code{phylo} and \code{DatedTree}), and a set of sequences (class \code{phyDat}).
+A list with a tree (class \code{phylo}), and a set of sequences (class \code{phyDat}), and the
+time course of the prevalence (and susceptible populations).
 }
 \description{
 \code{simulatetree} does a deterministic simulation of a two-population SIR-model,
 takes samples and simulates a phylogenetic tree. For all this, it makes use of phydynR
-(https://github.com/emvolz-phylodynamics/phydynR). Then it simulates DNA-sequences for these samples, with simSeq (\pkg{phangorn}).
+(https://github.com/emvolz-phylodynamics/phydynR). Then it simulates DNA-sequences for these samples,
+with simSeq (\pkg{phangorn}).
 }
 \author{
 Don Klinkenberg (\email{don@xs4all.nl})
