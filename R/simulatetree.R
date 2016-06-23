@@ -25,7 +25,6 @@
 #' @return A list with a tree (classes \code{phylo} and \code{DatedTree}), and a set of sequences (class \code{phyDat}).
 #'
 #' @author Don Klinkenberg (\email{don@@xs4all.nl})
-#'
 #' @export
 simulatetree <- function(N = c(100, 10000),
                          params = list(beta = matrix(c(2,0,0,2),nrow=2), gamma = 1, mu = .05),
@@ -87,14 +86,14 @@ simulatetree <- function(N = c(100, 10000),
   sampleTimes <- sort(sampleTimes)
 
   ### Simulate the phylogenetic tree
-  cotree <- sim.co.tree(theta = c(params, list(N = N)),
+  cotree <- phydynR::sim.co.tree(theta = c(params, list(N = N)),
                         dp,
                         x0 = c(I1 = I0[1], I2 = I0[2], S1 = N[1] - I0[1], S2 = N[2] - I0[2]),
                         t0 = 0, res = res, sampleTimes = sampleTimes,
                         sampleStates = sampleStates)
 
   ### Simulate the sequences
-  seqs <- simSeq(cotree, ...)
+  seqs <- phangorn::simSeq(cotree, ...)
   return(list(tree = cotree,
               sequences = seqs))
 

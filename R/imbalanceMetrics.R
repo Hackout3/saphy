@@ -24,13 +24,13 @@ imbalanceMetrics <- function(tree) {
     ls$Sackin.pds  <- apTreeshape::sackin(xx,"pda")
     ls$McKenzie <- abs(che - ntips/3)/sqrt(2 * ntips/45)
 
-    ls$I1 <- treeImbalance::I1(tree)
-    ls$I2 <- treeImbalance::I2(tree)
-    ls$Ic <- treeImbalance::Ic(tree)
-    ls$meanIprime <- treeImbalance::meanIprime(tree)
-    ls$M <- treeImbalance::M(tree)
-    ls$B1 <- treeImbalance::B1(tree)
-    ls$B2 <- treeImbalance::B2(tree)
+    ls$I1 <- treeImbalance::I1(xx)
+    ls$I2 <- treeImbalance::I2(xx)
+    ls$Ic <- treeImbalance::Ic(xx)
+    ls$meanIprime <- treeImbalance::meanIprime(xx)
+    ls$M <- treeImbalance::M(xx)
+    ls$B1 <- treeImbalance::B1(xx)
+    ls$B2 <- treeImbalance::B2(xx)
     ls$lbi.tips <- treeImbalance::lbi(tree)[1:ntips]
     ls$lbi.nodes <- treeImbalance::lbi(tree)[(ntips+1):ntot]
 
