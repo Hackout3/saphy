@@ -19,6 +19,10 @@ devtools::install_github(c("bdearlove/treeImbalance","emvolz-phylodynamics/phydy
 
 Note that this requires the package *devtools* installed.
 
+Note if using a mac, you will need lgfortran and lquadmath libraries installed before hand in order to compile rhydynR:
+curl -O http://r.research.att.com/libs/gfortran-4.8.2-darwin13.tar.bz2
+sudo tar fvxz gfortran-4.8.2-darwin13.tar.bz2 -C /
+
 ### Contributors (by alphabetic order):
 - Simon Frost (@sdwfrost)
 - Don Klinkenberg (@donkeyshot)
