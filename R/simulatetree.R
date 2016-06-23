@@ -9,7 +9,7 @@ simulate <- function(N = c(100, 10000),
                      samplebias = 1) {
 
   ### Build the demographic process, i.e. the transmission model
-  dp <- build.demographic.process(
+  dp <- phydynR::build.demographic.process(
     births = matrix(c('parms$beta[1,1] * S1 * I1 / parms$N[1]', 'parms$beta[1,2] * S1 * I2 / parms$N[1]',
                       'parms$beta[2,1] * S2 * I1 / parms$N[2]', 'parms$beta[2,2] * S2 * I2 / parms$N[2]'), nrow = 2,
                     dimnames = list(c("I1","I2"),c("I1","I2"))),
@@ -56,7 +56,7 @@ simulate <- function(N = c(100, 10000),
   sampleStates <- sampleStates[order(sampleTimes),]
   sampleTimes <- sort(sampleTimes)
 
-  cotree <- sim.co.tree(theta = c(params, list(N = N)),
+  cotree <- phydynR::sim.co.tree(theta = c(params, list(N = N)),
                         dp,
                         x0 = c(I1 = I0[1], I2 = I0[2], S1 = N[1] - I0[1], S2 = N[2] - I0[2]),
                         t0 = 0, sampleTimes = sampleTimes,

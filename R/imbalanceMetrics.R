@@ -13,9 +13,9 @@
 imbalanceMetrics <- function(tree) {
 
     ls <- list()
-    xx <- as.treeshape(tree)
+    xx <- apTreeshape::as.treeshape.phylo(tree)
     ntips <- tree$Nnode + 1
-    ntot <- n + tree$Nnode
+    ntot <- ntips + tree$Nnode
     che <- treeImbalance::Ncherries(tree)
 
     ls$Colless.yule  <- apTreeshape::colless(xx,norm="yule")
@@ -32,7 +32,7 @@ imbalanceMetrics <- function(tree) {
     ls$B1 <- treeImbalance::B1(tree)
     ls$B2 <- treeImbalance::B2(tree)
     ls$lbi.tips <- treeImbalance::lbi(tree)[1:ntips]
-    ls$lbi.nodes <- treeImbalance::lbi(tree)[(n+1):ntot]
+    ls$lbi.nodes <- treeImbalance::lbi(tree)[(ntips+1):ntot]
 
     return(ls)
 
