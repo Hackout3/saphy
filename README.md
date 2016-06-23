@@ -13,7 +13,8 @@ This package contains methods for the sequential (real-time, online) analysis of
 To install the devel version of the package, type:
 
 ```r
-devtools::install_github("Hackout3/saphy",build_vignettes=TRUE)
+devtools::install_github(c("bdearlove/treeImbalance","emvolz-phylodynamics/phydynR","Hackout3/saphy"),build_vignettes=TRUE)
+#devtools::install_github("Hackout3/saphy",build_vignettes=TRUE)
 ```
 
 Note that this requires the package *devtools* installed.
