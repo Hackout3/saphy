@@ -3,10 +3,10 @@
 export(compute.distance.matrix)
 export(expand.distance.matrix)
 export(imbalanceMetrics)
+export(imbalanceThreshold)
 export(pairwise.distance)
 export(permuteTrees)
 export(prunePermute)
 export(simulatetree)
 export(timeprune)
 export(tiplength)
-
