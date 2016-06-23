@@ -1,4 +1,4 @@
-#return suspecious tips
+#return suspicious tips
 imbalanceTips<-function(tree,reps=100){
   treemetrics<-imbalanceMetrics(tree)
   if(length(which(as.vector(unlist(treemetrics[1:12]))<threthold(tree,reps=100)[2,]
