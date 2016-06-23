@@ -29,7 +29,7 @@ branchLengthMetrics <- function(tree) {
   # Dists with long branches are normally distributed
   # with clusters there is a peak below the mean which looks like a cutoff
   distances <- cophenetic.phylo(tree)[upper.tri(cophenetic.phylo(tree))]
-  ls$clustsShapiro <- shapiro.test(dists)$statistic
+  ls$clustsShapiro <- shapiro.test(distances)$statistic
 
   # Larger for positive skew -> close tips; 1 for symmetric -> equally distant tips
   quantiles <- quantile(distances, probs = c(0.25,0.5,0.75))
