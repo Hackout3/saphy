@@ -19,8 +19,8 @@ timeprune <- function(tr,tipdates=NULL,reverse=FALSE){
   if(!is.null(tipdates)){
     td <- tipdates
   }else{
-    if(is.null(tipdates)&is.rooted(tr)){
-      td <- distRoot(tr)
+    if(is.null(tipdates)&ape::is.rooted(tr)){
+      td <- adephylo::distRoot(tr)
     }else{
       stop("Tipdates not specified and tree is unrooted.")
     }
@@ -33,7 +33,7 @@ timeprune <- function(tr,tipdates=NULL,reverse=FALSE){
     trs[[tl[i]]] <- tr
     if(i<(ntips-1)){
       mintip <- tl[i]
-      tr <- drop.tip(tr,mintip,trim.internal=TRUE)
+      tr <- ape::drop.tip(tr,mintip,trim.internal=TRUE)
     }
   }
   if(!reverse){
