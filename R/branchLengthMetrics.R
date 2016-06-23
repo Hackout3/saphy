@@ -6,7 +6,7 @@
 #'
 #' @author John Lees (\email{lees.john6@@gmail.com})
 #'
-#' @return TODO
+#' @return A list with 5 elements relating to tip lengths
 #'
 #' @export
 
